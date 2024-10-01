@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "10138376114",
+    "project_id": "vidis-31aaa",
+    "storage_bucket": "vidis-31aaa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:10138376114:android:a3fe5e98026cc2f8c2b6ab",
+        "android_client_info": {
+          "package_name": "com.example.vidis"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB01Eo1mWN0hJgX8r2AZroMseHsXo-c2G8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

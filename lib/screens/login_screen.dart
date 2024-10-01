@@ -44,9 +44,11 @@ class _LoginScreenState extends State<LoginScreen> {
                   onPressed: () async{
                     bool res = await _authMethods.signInWithGoogle(context);
                     if(res){
-                      Navigator.pushReplacement(context,
+                      Navigator.push(
+                          context,
                           MaterialPageRoute(builder: (context) =>
-                          const HomeScreen()));
+                          const HomeScreen())
+                      );
                     }
                   },
                   icon: ClipRRect(
