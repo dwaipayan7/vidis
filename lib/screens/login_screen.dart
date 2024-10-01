@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vidis/widgets/custom_button.dart';
+import 'package:vidis/utils/colors.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -12,6 +13,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: backgroundColor,
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -25,7 +27,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 padding: const EdgeInsets.symmetric(vertical: 38),
                 child: Image.asset('assets/images/onboarding.jpg'),
               ),
-              CustomButton(text: 'Login'),
+              CustomButton(text: 'Login', onTap: () {  },),
 
           ],
         ),

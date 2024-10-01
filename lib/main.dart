@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'DisiV',
+      title: 'Vidis',
       theme: ThemeData.dark().copyWith(
 
        //  colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
