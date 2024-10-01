@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:vidis/screens/history_meeting_screen.dart';
+import 'package:vidis/screens/meeting_screen.dart';
 import 'package:vidis/utils/colors.dart';
 import 'package:vidis/widgets/home_meeting_button.dart';
 
@@ -19,39 +21,29 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
+  List<Widget> pages = [
+    MeetingScreen(),
+    const HistoryMeetingScreen(),
+    const Text('Contacts'),
+    const Text('Settings'),
+
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        title: Text("Meet & Status", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
+        title: const Text("Meet & Status",
+          style: TextStyle(color: Colors.white,
+              fontWeight: FontWeight.bold),),
         centerTitle: true,
         backgroundColor: backgroundColor,
 
       ),
       backgroundColor: backgroundColor,
       // You can add content here based on the current page index (_page)
-      body: Column(
-        children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                HomeMeetingButton(onPressed: (){}, icon: Icons.video_call, text: 'New Meeting',),
-                HomeMeetingButton(onPressed: (){}, icon: Icons.add_box_rounded, text: 'Join Meeting',),
-                HomeMeetingButton(onPressed: (){}, icon: Icons.calendar_today, text: 'Scheduling',),
-                HomeMeetingButton(onPressed: (){}, icon: Icons.arrow_upward, text: 'Share Screen',),
-              ],
-            ),
-          Expanded(
-              child: Center(
-                child: Text("Create/Join Meetings", style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18
-                ),),
-              )
-          )
-        ],
-      ),
+      body: pages[_page],
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Colors.white,
         unselectedItemColor: Colors.grey,
