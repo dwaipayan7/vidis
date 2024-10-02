@@ -1,8 +1,10 @@
 import 'package:jitsi_meet_flutter_sdk/jitsi_meet_flutter_sdk.dart';
+import 'package:vidis/resources/firestore_methods.dart';
 import 'auth_methods.dart';
 
 class JitsiMeetMethods {
   final AuthMethods _authMethods = AuthMethods();
+  final FireStoreMethods _fireStoreMethods = FireStoreMethods();
 
   Future<void> createMeeting({
     required String roomName,
@@ -28,6 +30,7 @@ class JitsiMeetMethods {
         featureFlags: {
           "unsaferoomwarning.enabled": false,  // Disable warning for unsafe room names
           "welcomePageEnabled": false,         // Disable the welcome page
+          "moderation.enabled": true,
         },
         userInfo: JitsiMeetUserInfo(
           displayName: displayName,   // Set the display name
@@ -36,6 +39,8 @@ class JitsiMeetMethods {
       );
 
       // Join the meeting with the specified options
+
+      _fireStoreMethods.addToMeetingHistory(roomName);
       await jitsiMeet.join(options);
 
     } catch (error) {
