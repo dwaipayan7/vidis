@@ -42,6 +42,7 @@ dependencies:
   google_sign_in: ^6.2.1
   skeletonizer: ^1.4.2
   jitsi_meet_flutter_sdk: ^10.2.1
+  intl: ^0.19.0
 #  jitsi_meet:
 
 dev_dependencies:

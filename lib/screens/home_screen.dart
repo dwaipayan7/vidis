@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:vidis/resources/auth_methods.dart';
 import 'package:vidis/screens/history_meeting_screen.dart';
 import 'package:vidis/screens/meeting_screen.dart';
 import 'package:vidis/utils/colors.dart';
+import 'package:vidis/widgets/custom_button.dart';
 import 'package:vidis/widgets/home_meeting_button.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -25,7 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
     MeetingScreen(),
     const HistoryMeetingScreen(),
     const Text('Contacts'),
-    const Text('Settings'),
+    Center(child: CustomButton(text: 'Log Out', onTap: ()=> AuthMethods().signOut()))
 
   ];
 
